@@ -1,10 +1,12 @@
-#### This is a documentation for setting up Brightway 2.5 in combination with ecoinvent and later with other databases. In order for this script to work, you need to have Brightway installed on your computer and an active environment in which you have defined your project. To do this, navigate to your local project folder/GitHub repository by using
+#### This repository is structured in a way to guide the user through the different steps and functionalities that brightway 2.5 offers, from importing and working with ecoinvent, to foreground analysis, to importing Brightway EXCEL models. There is a Jupyter notebook for every category identified. Contributions and suggestions for further categories are welcome to enable a collective learning experience.
+
+#### Firstly, we need to install and setup the background for Brightway 2.5 on our machine so we can work in the repository. We need to have Brightway installed on your computer and an active environment in which you have defined your project. To do this, navigate to your local project folder/GitHub repository by using
 
     ```
-    cd C:\Users\TimWeber\repos_20LCA\explore_v2
+    cd C:\Users\TimWeber\repos_20LCA\brightway25
     ```
 
-#### Adjust this with what your local folder structure is. Then, create your environment (here called explore_v2, this can be adjusted to your desired names) which is installed and forged with cmutel brightway25 channel.
+#### Adjust this with what your local folder structure is. Then, create your environment (here called explore_v2, this can be adjusted to your desired names) which is installed and forged with cmutel Brightway25 channel.
 
     ```
     conda create -n brightway25 -c conda-forge -c cmutel brightway25
