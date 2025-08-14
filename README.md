@@ -25,3 +25,5 @@
 #### You now have an active environment and installed Brightway 2.5 on your local computer. You can now make sure to get access to the ecoinvent version you want to import to your Brightway project using the provided script. Congrats on this step in your Brightway journey!
 
 #### After having completed these steps in your Anaconda Prompt it's time to work in the script provided in this repository.
+
+#### You should make sure that you have all relevant other libraries installed in your environment (pandas, seaborn, matplotlib etc.)
