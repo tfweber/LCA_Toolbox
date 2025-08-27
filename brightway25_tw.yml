@@ -1,0 +1,26 @@
+name: brightway25_tw
+channels:
+  - cmutel
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pandas
+  - jupyterlab
+  - bw2io >= 0.9.dev40
+  - bw2data >= 4.0.dev58
+  - bw2calc >= 2.0.dev16
+  - bw2parameters >= 1.1.0
+  - brightway25
+  - pypardiso
+  - fs # needed by bw2regional or bw2_aware
+  - bw2regional
+  - py7zr
+  - pint
+  - seaborn
+  - pip
+  - pip:
+      - bw2_aware
+      - premise[bw25]
+      - git+https://github.com/romainsacchi/d3blocks.git
+      - polyviz
