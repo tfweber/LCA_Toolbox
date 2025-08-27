@@ -1,4 +1,4 @@
-# README.md 
+# LCA with Python - Beginner Tutorial
 
 The goal of this respository is to make the use of Brigthway 2.5 as intuitive and easy to a beginner in Python. The repository is structured to first install and import all necessary software to setup a functioning environment to analyse your Brightway 2.5 models in. An other aim is to enable the user to apply different background databases such as EcoInvent, EXIOBASE, BONSAI and others. 
 
