@@ -1,0 +1,6 @@
+2025-08-27 15:27:41 - DEBUG - __init__ - matplotlib data path: c:\Users\TimWeber\anaconda3\envs\brightway25_tw\Lib\site-packages\matplotlib\mpl-data
+2025-08-27 15:27:41 - DEBUG - __init__ - CONFIGDIR=C:\Users\TimWeber\.matplotlib
+2025-08-27 15:27:41 - DEBUG - __init__ - interactive is False
+2025-08-27 15:27:41 - DEBUG - __init__ - platform is win32
+2025-08-27 15:27:41 - DEBUG - __init__ - CACHEDIR=C:\Users\TimWeber\.matplotlib
+2025-08-27 15:27:41 - DEBUG - font_manager - Using fontManager instance from C:\Users\TimWeber\.matplotlib\fontlist-v390.json
