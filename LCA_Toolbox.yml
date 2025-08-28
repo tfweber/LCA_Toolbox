@@ -1,4 +1,4 @@
-name: brightway25_tw
+name: LCA_Toolbox
 channels:
   - cmutel
   - conda-forge
