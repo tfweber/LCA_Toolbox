@@ -1,10 +1,10 @@
 ### LCA_Toolbox - An exploration of Python modelling tools for LCA practicioners
 
-The goal of this respository is to make the use of Brigthway 2.5 as intuitive and easy to a beginner in Python. The repository is structured to first install and import all necessary software to setup a functioning environment to analyse your Brightway 2.5 models in. An other aim is to enable the user to apply different background databases such as EcoInvent, EXIOBASE, BONSAI and others. 
+The goal of this respository is to make the use of Brigthway 2.5 and other python based LCA tools intuitive for beginners in Python. The repository is structured to first install and import all necessary software to setup a functioning environment to conduct your projects.
 
-First, we need to clone the repository and store it on your local machine. A recommendation is to download the GitHub extension in VSCode and follow the instructions in VSCode to do so. It is also a strong recommendation to have Anaconda Navigator and Anaconda Prompt installed, as the installation manual suggests to use Anaconda prompt for installing the required software and environment.
+A recommendation is to have Anaconda Navigator and Anaconda Prompt installed, as the installation manual suggests to use Anaconda prompt for installing the required software and environment. Further recommended software is VSCode and the GitHub extension that you can install in VSCode.
 
-Then navigate to this folder in your Anaconda Prompt terminal. When you navigated to your repository, we now want to install and activate an environment for this work. The settings and dependencies are stored in LCA_Toolbox.yml, which we are referencing now to install all packages required for the work with LCA_Toolbox. Among others, creating the environment from LCA_Toolbox.yml will install Brightway 2.5, premise and helper packages.
+First, we need to clone the repository and store it on your local machine. Then navigate to this folder in your Anaconda Prompt terminal. When you navigated to your repository, we now want to install and activate an environment for this work. The settings and dependencies are stored in LCA_Toolbox.yml, which we are referencing now to install all packages required for the work with LCA_Toolbox. Among others, creating the environment from LCA_Toolbox.yml will install Brightway 2.5, premise and helper packages.
 
     conda env create -f LCA_Toolbox.yml
     
