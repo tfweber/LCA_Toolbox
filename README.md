@@ -1,14 +1,18 @@
 ### LCA_Toolbox - An exploration of Python modelling tools for LCA practicioners
 
-The goal of this respository is to make the use of Brigthway 2.5 and other python based LCA tools intuitive for beginners in Python. The repository is structured to first install and import all necessary software to setup a functioning environment to conduct your projects.
+The goal of this respository is to make the use of Brigthway 2.5 and other python based LCA tools intuitive for first time Brightway users in Python. 
 
-A recommendation is to have Anaconda Navigator and Anaconda Prompt installed, as the installation manual suggests to use Anaconda prompt for installing the required software and environment. Further recommended software is VSCode and the GitHub extension that you can install in VSCode.
+It is recommended to have Anaconda Navigator and Anaconda Prompt installed. Further recommended software is VSCode and the GitHub extension that you can install in VSCode.
 
-First, we need to clone the repository and store it on your local machine. Then navigate to this folder in your Anaconda Prompt terminal. When you navigated to your repository, we now want to install and activate an environment for this work. The settings and dependencies are stored in LCA_Toolbox.yml, which we are referencing now to install all packages required for the work with LCA_Toolbox. Among others, creating the environment from LCA_Toolbox.yml will install Brightway 2.5, premise and helper packages.
+First, the repository has to be cloned and stored on your local machine. Then open the Anaconda Prompt terminal and navigate to the folder using the following command.
+
+    cd C:\Users\yourname\cloned_repository_folder
+    
+Now, we can install the environment and the required dependencies. Among others, creating the environment from LCA_Toolbox.yml will install Brightway 2.5, premise and helper packages.
 
     conda env create -f LCA_Toolbox.yml
     
-You will be asked to activate this environment. You should agree to this.
+An environment called LCA_Toolbox is now created, which has to be activated in the next step. You will be asked to activate this environment. You should agree to this.
 
     conda activate LCA_Toolbox
 
