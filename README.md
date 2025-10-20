@@ -2,7 +2,7 @@
 
 The goal of this respository is to make the use of Brigthway 2.5 and other python based LCA tools intuitive for first time Brightway users in Python. 
 
-It is recommended to have Anaconda Navigator and Anaconda Prompt installed. Further recommended software is VSCode and the GitHub extension that you can install in VSCode.
+It is recommended to have Anaconda Navigator and Anaconda Prompt installed. Further recommended software is VSCode and the GitHub extension that you can install in VSCode. You also need to have Python installed and the extensions for Jupyter.
 
 First, the repository has to be cloned and stored on your local machine. Then open the Anaconda Prompt terminal and navigate to the folder using the following command.
 
