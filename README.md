@@ -21,3 +21,5 @@ Once activated, this installs a few helper functions:
     conda install -c conda-forge jupyterlab
 
 We now have an activated environment with Brightway 2.5 and PREMISE as open source LCA software tools for Life Cycle Assessment and the development of prospective Life Cycle Inventories. The different scripts in this repository guide you through the installation of different background databases, analysis functions in brightway and application examples for conducting prospective LCA.
+
+If you change something don't forget to push to GitHub
