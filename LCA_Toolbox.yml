@@ -24,3 +24,4 @@ dependencies:
       - premise[bw25]
       - git+https://github.com/romainsacchi/d3blocks.git
       - polyviz
+      - -r requirements.txt
