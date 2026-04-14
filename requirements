@@ -1,0 +1,3 @@
+polyviz
+git+https://github.com/mfastudillo/brightway2-io.git@io
+git+https://github.com/romainsacchi/d3blocks.git
