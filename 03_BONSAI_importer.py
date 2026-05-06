@@ -1,65 +1,99 @@
-from pathlib import Path
-import os
-import bw2data as bd
-import bw2io as bi
-from bw2io.importers.bonsai import BonsaiImporter
-from bw2io.strategies.bonsai import mapb3
-
-BONSAI_PATH = Path(r"C:\Users\TimWeber\databases\BONSAI_V2.1.6")
-BONSAI_NAME = "BONSAI_V2.1.6"
-PROJECT_NAME = "LCA_Toolbox"
-
-
-def define_b3_map() -> dict:
-
-    biosphere_db = bd.Database(bd.config.biosphere)
-
-    co_fossil = biosphere_db.get(name="Carbon monoxide, fossil", categories=("air",))
-    co2_non_fossil = biosphere_db.get(name="Carbon dioxide, non-fossil", categories=("air",))
-    co2_fossil = biosphere_db.get(name="Carbon dioxide, fossil", categories=("air",))
-    ch4_fossil = biosphere_db.get(name="Methane, fossil", categories=("air",))
-    ch4_non_fossil = biosphere_db.get(name="Methane, non-fossil", categories=("air",))
-    n2o = biosphere_db.get(name="Dinitrogen monoxide", categories=("air",))
-
-    map_bonsai_b3 = {
-        "Carbon_dioxide__fossil_Air": co2_fossil["code"],
-        "Carbon_dioxide__biogenic_Air": co2_non_fossil["code"],
-        "Methane__fossil_Air": ch4_fossil["code"],
-        "Methane__biogenic_Air": ch4_non_fossil["code"],
-        "Carbon_monoxide__fossil_Air": co2_non_fossil["code"],
-        "Dinitrogen_monoxide_Air": n2o["code"],
-    }
-
-    return map_bonsai_b3
-
-
-def main():
-
-    # delete previous versions of the database
-    try:
-        del bd.databases[f"{BONSAI_NAME} biosphere"]
-        del bd.databases[BONSAI_NAME]
-        bd.Database(BONSAI_NAME).delete(warn=False)
-        bd.Database(f"{BONSAI_NAME} biosphere").delete(warn=False)
-    except KeyError:
-        print("db not there")
-
-    # install biosphere3 and set project
-    bi.remote.install_project(
-        project_key="ecoinvent-3.10-biosphere",
-        project_name=PROJECT_NAME,
-        overwrite_existing=True,
-    )
-    bd.projects.set_current(PROJECT_NAME)
-
-    assert BONSAI_PATH.is_dir(), f"BONSAI folder not found at: {BONSAI_PATH}"
-
-    mapping_b3 = define_b3_map()
-
-    bonsai = BonsaiImporter(BONSAI_PATH, BONSAI_NAME, b3mapping=mapping_b3)
-    bonsai.apply_strategies()
-    bonsai.write_database()
-
-
-if __name__ == "__main__":
-    main()
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "077d6d6d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from pathlib import Path\n",
+    "import os\n",
+    "import bw2data as bd\n",
+    "import bw2io as bi\n",
+    "from bw2io.importers.bonsai import BonsaiImporter\n",
+    "from bw2io.strategies.bonsai import mapb3\n",
+    "\n",
+    "BONSAI_PATH = Path(r\"C:\\Users\\TimWeber\\databases\\BONSAI_V2.1.6\")\n",
+    "BONSAI_NAME = \"BONSAI_V2.1.6\"\n",
+    "PROJECT_NAME = \"LCA_Toolbox\"\n",
+    "\n",
+    "\n",
+    "def define_b3_map() -> dict:\n",
+    "\n",
+    "    biosphere_db = bd.Database(bd.config.biosphere)\n",
+    "\n",
+    "    co_fossil = biosphere_db.get(name=\"Carbon monoxide, fossil\", categories=(\"air\",))\n",
+    "    co2_non_fossil = biosphere_db.get(name=\"Carbon dioxide, non-fossil\", categories=(\"air\",))\n",
+    "    co2_fossil = biosphere_db.get(name=\"Carbon dioxide, fossil\", categories=(\"air\",))\n",
+    "    ch4_fossil = biosphere_db.get(name=\"Methane, fossil\", categories=(\"air\",))\n",
+    "    ch4_non_fossil = biosphere_db.get(name=\"Methane, non-fossil\", categories=(\"air\",))\n",
+    "    n2o = biosphere_db.get(name=\"Dinitrogen monoxide\", categories=(\"air\",))\n",
+    "\n",
+    "    map_bonsai_b3 = {\n",
+    "        \"Carbon_dioxide__fossil_Air\": co2_fossil[\"code\"],\n",
+    "        \"Carbon_dioxide__biogenic_Air\": co2_non_fossil[\"code\"],\n",
+    "        \"Methane__fossil_Air\": ch4_fossil[\"code\"],\n",
+    "        \"Methane__biogenic_Air\": ch4_non_fossil[\"code\"],\n",
+    "        \"Carbon_monoxide__fossil_Air\": co2_non_fossil[\"code\"],\n",
+    "        \"Dinitrogen_monoxide_Air\": n2o[\"code\"],\n",
+    "    }\n",
+    "\n",
+    "    return map_bonsai_b3\n",
+    "\n",
+    "\n",
+    "def main():\n",
+    "\n",
+    "    # delete previous versions of the database\n",
+    "    try:\n",
+    "        del bd.databases[f\"{BONSAI_NAME} biosphere\"]\n",
+    "        del bd.databases[BONSAI_NAME]\n",
+    "        bd.Database(BONSAI_NAME).delete(warn=False)\n",
+    "        bd.Database(f\"{BONSAI_NAME} biosphere\").delete(warn=False)\n",
+    "    except KeyError:\n",
+    "        print(\"db not there\")\n",
+    "\n",
+    "    # install biosphere3 and set project\n",
+    "    bi.remote.install_project(\n",
+    "        project_key=\"ecoinvent-3.10-biosphere\",\n",
+    "        project_name=PROJECT_NAME,\n",
+    "        overwrite_existing=True,\n",
+    "    )\n",
+    "    bd.projects.set_current(PROJECT_NAME)\n",
+    "\n",
+    "    assert BONSAI_PATH.is_dir(), f\"BONSAI folder not found at: {BONSAI_PATH}\"\n",
+    "\n",
+    "    mapping_b3 = define_b3_map()\n",
+    "\n",
+    "    bonsai = BonsaiImporter(BONSAI_PATH, BONSAI_NAME, b3mapping=mapping_b3)\n",
+    "    bonsai.apply_strategies()\n",
+    "    bonsai.write_database()\n",
+    "\n",
+    "\n",
+    "if __name__ == \"__main__\":\n",
+    "    main()"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "LCA_Toolbox",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.15"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
