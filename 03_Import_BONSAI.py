@@ -46,7 +46,7 @@ def main():
     bi.remote.install_project(
         project_key="ecoinvent-3.10-biosphere",
         project_name=PROJECT_NAME,
-        overwrite_existing=True,
+        overwrite_existing=False,
     )
     bd.projects.set_current(PROJECT_NAME)
 
